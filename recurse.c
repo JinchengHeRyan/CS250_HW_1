@@ -12,7 +12,7 @@ int f(int N)
 
 int main(int argc, const char *argv[])
 {
-    if (argc > 0)
+    if (argc > 1)
     {
         int N = atoi(argv[1]);
         printf("%d\n", f(N));

@@ -3,7 +3,7 @@
 
 int main(int argc, const char *argv[])
 {
-    if (argc > 0)
+    if (argc > 1)
     {
         int N = atoi(argv[1]);
         for (int i = 0; i < N; i++)
