@@ -4,3 +4,8 @@ byseven
 recurse
 PizzaCalc
 
+# Mac ignored files
+.DS_Store
+
+# VSCode files
+.vscode/
