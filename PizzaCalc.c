@@ -42,21 +42,19 @@ void copy_name(char *copied_in, char *copy_origin)
 void sortPizzaList(struct Pizza *pizza_list, int pizza_count)
 {
     // Start sorting the pizza list
-    int maxPPD;
+    float maxPPD;
     int maxIndex;
 
-    int tempInt;
-    float tempFloat;
     for (int i = 0; i < pizza_count - 1; i++)
     {
         maxPPD = pizza_list[i].pizza_per_dolloar;
         maxIndex = i;
 
-        for (int j = i; j < pizza_count; j++)
+        for (int j = i+1; j < pizza_count; j++)
         {
             if (pizza_list[j].pizza_per_dolloar > maxPPD)
             {
-                maxPPD = pizza_list[i].pizza_per_dolloar;
+                maxPPD = pizza_list[j].pizza_per_dolloar;
                 maxIndex = j;
             }
         }
