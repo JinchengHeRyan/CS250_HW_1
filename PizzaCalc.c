@@ -50,12 +50,37 @@ void sortPizzaList(struct Pizza *pizza_list, int pizza_count)
         maxPPD = pizza_list[i].pizza_per_dolloar;
         maxIndex = i;
 
-        for (int j = i+1; j < pizza_count; j++)
+        for (int j = i + 1; j < pizza_count; j++)
         {
             if (pizza_list[j].pizza_per_dolloar > maxPPD)
             {
                 maxPPD = pizza_list[j].pizza_per_dolloar;
                 maxIndex = j;
+            }
+            else if (pizza_list[j].pizza_per_dolloar == maxPPD)
+            {
+                int min;
+                if (strlen(pizza_list[j].name) < strlen(pizza_list[maxIndex].name))
+                {
+                    min = strlen(pizza_list[j].name);
+                }
+                else
+                {
+                    min = strlen(pizza_list[maxIndex].name);
+                }
+                for (int t = 0; t < min; t++)
+                {
+                    if (pizza_list[maxIndex].name[t] > pizza_list[j].name[t])
+                    {
+                        maxPPD = pizza_list[j].pizza_per_dolloar;
+                        maxIndex = j;
+                        break;
+                    }
+                    if (pizza_list[maxIndex].name[t] < pizza_list[j].name[t])
+                    {
+                        break;
+                    }
+                }
             }
         }
         struct Pizza temp_pointer = pizza_list[i];
