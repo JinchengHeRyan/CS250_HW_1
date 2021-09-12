@@ -29,6 +29,7 @@ struct Pizza
     float pizza_per_dolloar;
 };
 
+// Used for copying name into the struct
 void copy_name(char *copied_in, char *copy_origin)
 {
     int len = strlen(copy_origin);
@@ -39,6 +40,7 @@ void copy_name(char *copied_in, char *copy_origin)
     copied_in[len] = 0;
 }
 
+// Sorting algorithm, including sort the name with same pizza_per_dollar value by alphabetical order
 void sortPizzaList(struct Pizza *pizza_list, int pizza_count)
 {
     // Start sorting the pizza list
@@ -83,6 +85,7 @@ void sortPizzaList(struct Pizza *pizza_list, int pizza_count)
                 }
             }
         }
+        // Swap
         struct Pizza temp_pointer = pizza_list[i];
         pizza_list[i] = pizza_list[maxIndex];
         pizza_list[maxIndex] = temp_pointer;
@@ -169,10 +172,6 @@ int main(int argc, char *argv[])
         // printf("All Pizza Count = %d\n", pizza_count);
         for (int i = 0; i < pizza_count; i++)
         {
-            // printf("The name is: %s\n", pizza_list[i].name);
-            // printf("The diameter is: %f\n", pizza_list[i].diameter);
-            // printf("The cost is: %f\n", pizza_list[i].cost);
-            // printf("The pizza_per_dollar is: %f\n", pizza_list[i].pizza_per_dolloar);
             printf("%s %f\n", pizza_list[i].name, pizza_list[i].pizza_per_dolloar);
         }
 
