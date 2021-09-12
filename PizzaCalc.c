@@ -140,6 +140,13 @@ int main(int argc, char *argv[])
                     break;
                 }
             }
+            else
+            {
+                printf("PIZZA FILE IS EMPTY\n");
+                fclose(input_file);
+                free(pizza_list);
+                return EXIT_SUCCESS;
+            }
         }
         fclose(input_file);
 
